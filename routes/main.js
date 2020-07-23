@@ -1,9 +1,12 @@
+const path = require('path');
+
 const express = require('express');
 
+const mainController = require('../controllers/main');
+
 const router = express.Router();
+router.get('/', mainController.getposting);
 
-router.get('/', (req, res) => {
-    res.send('hello there!');
-});
+router.post('/post',mainController.postposting);
 
-module.exports = Router;
+module.exports = router;
