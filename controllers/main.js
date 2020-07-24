@@ -5,6 +5,6 @@ exports.getposting = (req, res, next) => {
 };
 
 
-exports.postposting = (req, res, next) => {
-    res.send("r u there?");
+exports.getpost = (req, res, next) => {
+    res.render('post');
 };
