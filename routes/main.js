@@ -9,4 +9,6 @@ router.get('/', mainController.getposting);
 
 router.get('/post',mainController.getpost);
 
+router.post('/', mainController.postpost);
+
 module.exports = router;

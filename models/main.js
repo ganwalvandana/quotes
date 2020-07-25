@@ -2,12 +2,26 @@ const fs = require('fs');
 
 const path = require('path');
 
-const mongodb = require('mongodb');
+const mongoose = require('mongoose');
 
-class Post {
-    constructor(title, description, writer) {
-        this.title = title;
-        this.description = description;
-        this.writer = writer;
+const Schema = mongoose.Schema;
+
+
+const postSchema =  new Schema({
+    title: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+        required: true 
+    },
+    writer: {
+        type: String,
+        required: true
     }
-}
+
+    
+});
+
+module.exports = mongoose.model('main', postSchema);
