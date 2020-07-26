@@ -1,0 +1,23 @@
+<%-include('./partials/head.ejs') %>
+<link rel="stylesheet" href="../public/form.css">
+</head>
+
+<body style="background-color: rgb(88, 158, 155);">
+<%-include('./partials/nav.ejs') %>
+
+<main style = " height: 60%;
+width: 50%;
+border: 5px;
+text-align: center;
+margin-left: 330px;
+margin-top: 150px;">
+    
+    <form action="#" method="POST" style="align-self: center;">
+        <div class="form-group">
+          <input type="text" class="form-control" style=" align-self: center; height: 70px; "  placeholder="Message">
+        </div>
+        <button type="submit">Send</button>
+      </form>
+</main>
+
+<%-include('./partials/end.ejs') %>

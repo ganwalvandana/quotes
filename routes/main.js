@@ -11,4 +11,6 @@ router.get('/post',mainController.getpost);
 
 router.post('/', mainController.postpost);
 
+router.get('/contact', mainController.getcontact);
+
 module.exports = router;

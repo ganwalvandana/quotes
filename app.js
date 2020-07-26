@@ -16,22 +16,26 @@ app.set('views', 'views');
 
 const mainroutes = require('./routes/main');
 
-app.use(bodyparser.urlencoded({extended: false}));
+app.use(bodyparser.urlencoded({extended: true}));
 
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 app.use(mainroutes);
 
 app.use(errorController.get404);
 
+const port = 3000;
 mongoose
 .connect(
-    'mongodb+srv://Vandanganwal:vandana@cluster0.oohyc.mongodb.net/<dbname>? retryWrites=true&w=majority'
+    'mongodb+srv://vandanganwal:vandana@cluster0.90kka.mongodb.net/quotes?retryWrites=true&w=majority', {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    }
 )
-// .then(result => {
-//     app.listen(3000);
-// });
-app.listen(3000);
+.then(result => {
+    app.listen(port, () => console.log('server listening @' + port));
+});
+
+// app.listen(3000);
 
 

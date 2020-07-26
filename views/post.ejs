@@ -2,19 +2,25 @@
 <link rel="stylesheet" href="../public/form.css">
 </head>
 
-<body>
+<body style="background-color: cadetblue;">
 <%-include('./partials/nav.ejs') %>
 
-<main>
-    <form action="/" method="POST">
+<main style = "height: 60%;
+width: 50%;
+border: 5px;
+text-align: center;
+margin-left: 330px;
+margin-top: 150px;">
+    
+    <form action="/" method="POST" style="align-self: center;">
         <div class="form-group">
-          <input type="text" class="form-control" style="width: 40%;  "  placeholder="Title">
+          <input type="text" class="form-control" style=" align-self: center;  " name="title"  placeholder="Title" />
         </div>
         <div class="form-group">
-          <textarea type="text" class="form-control"  placeholder="Description"></textarea>
+          <textarea type="text" class="form-control"  placeholder="Description" name="description"></textarea>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control"  placeholder="Writer">
+            <input type="text" class="form-control"  placeholder="Writer" name="writer" />
         </div>
         <button type="submit">Submit</button>
       </form>

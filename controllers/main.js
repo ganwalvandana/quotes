@@ -1,5 +1,4 @@
-const Posting = require('../models/main');
-const { post } = require('../routes/main');
+const Post = require('../models/post');
 
 exports.getposting = (req, res, next) => {
     res.render('main');
@@ -14,11 +13,16 @@ exports.getpost = (req, res, next) => {
     });
 };
 
-exports.postpost = (req, res, next) => {
-    const title = req.title;
-    const description = req.description;
-    const writer = req.writer;
-    post.save();
+exports.postpost = async(req, res, next) => {
+    const post = new Post({ ...req.body });
+    await post.save();
     res.redirect('/');
 };
 
+exports.getcontact = (req, res, next) => {
+    res.render('contact',{ 
+        title: 'Contact',
+        path: '/main/contact',
+        editing: true
+    });
+};

@@ -1,11 +1,6 @@
-const fs = require('fs');
-
-const path = require('path');
-
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
-
 
 const postSchema =  new Schema({
     title: {
@@ -19,9 +14,7 @@ const postSchema =  new Schema({
     writer: {
         type: String,
         required: true
-    }
-
-    
+    }    
 });
 
-module.exports = mongoose.model('main', postSchema);
+module.exports = mongoose.model('post', postSchema);
