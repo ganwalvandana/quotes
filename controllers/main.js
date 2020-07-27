@@ -13,11 +13,38 @@ exports.getpost = (req, res, next) => {
     });
 };
 
+
+
 exports.postpost = async(req, res, next) => {
     const post = new Post({ ...req.body });
     await post.save();
-    res.redirect('/');
+    res.redirect('/posts');
 };
+
+exports.posteditpost = (req, res, next) => {
+    const edittitle = req.body.title;
+    const editdescription = req.body.description;
+    const editwriter = req.body.writer;
+
+    Post.find()
+        .then(post => {
+            post.title = edittitle;
+            post.description = editdescription;
+            post.writer = editwriter;
+            return post.save();
+        })
+        .then(result => {
+            console.log('Post Edited!');
+            res.redirect('/posts');
+        })
+        
+};
+
+
+
+
+
+
 
 exports.getcontact = (req, res, next) => {
     res.render('contact',{ 

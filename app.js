@@ -24,7 +24,7 @@ app.use(mainroutes);
 
 app.use(errorController.get404);
 
-const port = 3000;
+const port = 4000;
 mongoose
 .connect(
     'mongodb+srv://vandanganwal:vandana@cluster0.90kka.mongodb.net/quotes?retryWrites=true&w=majority', {
