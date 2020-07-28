@@ -13,6 +13,8 @@ router.post('/', mainController.postpost);
 
 router.post('/posts', mainController.posteditpost);
 
+router.get('/posts', mainController.getposts);
+
 router.get('/contact', mainController.getcontact);
 
 module.exports = router;

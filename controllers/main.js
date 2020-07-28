@@ -26,19 +26,36 @@ exports.posteditpost = (req, res, next) => {
     const editdescription = req.body.description;
     const editwriter = req.body.writer;
 
-    Post.find()
+    Post.find() 
         .then(post => {
-            post.title = edittitle;
-            post.description = editdescription;
-            post.writer = editwriter;
+            posts.title = edittitle;
+            posts.description = editdescription;
+            posts.writer = editwriter;
             return post.save();
-        })
-        .then(result => {
-            console.log('Post Edited!');
             res.redirect('/posts');
-        })
+        });
+        // .then(result => {
+        //     console.log('Post Edited!');
+        //     posts: posts,
+        //     pageTitle: posts,
+        //     res.redirect('/posts');
+        // });
         
 };
+
+exports.getposts = (req, res, next) => {
+    Post.find()
+      .then(posts => {
+          console.log(posts);
+          res.render('posts', {
+            posts: posts,
+            pageTitle: posts,
+            path: '/posts'  
+          });
+      });
+};
+
+
 
 
 

@@ -3,6 +3,53 @@
 
 <body>
 <%-include('./partials/nav.ejs') %>
+<h1 style="text-align: center;
+color: darkblue;
+font-weight: bold;
+margin-top: 50px;">POSTS</h1>
 
+<main>
+    <% if (posts.length > 0) { %>
+        <div class="box" style="display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: stretch;
+        margin: 100px;
+        padding :0px 50px;
+        box-sizing: border-box;
+        border: black;">
+            <% for (let post of posts) { %>
+                <article style="margin: 1rem; width: 20rem;
+                max-width: 95%;">
+                        <div>
+                            <header>
+                                <h3 style="text-align: center;
+                                color: darkcyan;">
+                                    <%= post.title %>
+                                </h3>
+                            </header>    
+                        </div>
+                        <div>
+                            <h4 style="text-align: center;
+                            color: darkslateblue;">
+                                <%= post.description %>
+                            </h4>
+                        </div>
+                        <div>
+                            <h4 style="text-align: center;
+                            margin-top: 12px;
+                            color: darkslateblue;">
+                                <%= post.writer %>
+                            </h4>
+                        </div>
+                </article>
+            <% } %>
+        </div>
+    <% } else { %>
+        <h1>
+            No Posts!
+        </h1>
+    <% } %>
+</main>
 
 <%-include('./partials/end.ejs') %>
