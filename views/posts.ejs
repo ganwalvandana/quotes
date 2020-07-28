@@ -1,12 +1,13 @@
 <%-include('./partials/head.ejs') %>
 </head>
 
-<body>
+<body style="background-color: lightblue;">
 <%-include('./partials/nav.ejs') %>
-<h1 style="text-align: center;
+<!-- <h1 style="text-align: center;
 color: darkblue;
 font-weight: bold;
-margin-top: 50px;">POSTS</h1>
+margin-top: 50px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> <u>POSTS</u> </h1> -->
 
 <main>
     <% if (posts.length > 0) { %>
@@ -16,22 +17,31 @@ margin-top: 50px;">POSTS</h1>
         align-items: stretch;
         margin: 100px;
         padding :0px 50px;
-        box-sizing: border-box;
-        border: black;">
+        ">
             <% for (let post of posts) { %>
-                <article style="margin: 1rem; width: 20rem;
-                max-width: 95%;">
+                <article style="margin: 2rem; width: 60%;
+                 box-sizing: border-box;
+                border: 10px black;
+                outline-style: groove;
+                padding: 20px;
+                background-color: rgb(219, 240, 239);
+                box-shadow: black 2px;
+                margin:10px 50px;">
                         <div>
                             <header>
                                 <h3 style="text-align: center;
-                                color: darkcyan;">
+                                color: darkcyan;
+                                text-transform: capitalize;">
+                                <u>
                                     <%= post.title %>
+                                </u>
                                 </h3>
                             </header>    
                         </div>
                         <div>
                             <h4 style="text-align: center;
-                            color: darkslateblue;">
+                            color: darkslateblue;
+                            ">
                                 <%= post.description %>
                             </h4>
                         </div>
@@ -39,7 +49,7 @@ margin-top: 50px;">POSTS</h1>
                             <h4 style="text-align: center;
                             margin-top: 12px;
                             color: darkslateblue;">
-                                <%= post.writer %>
+                               - <%= post.writer %>
                             </h4>
                         </div>
                 </article>
